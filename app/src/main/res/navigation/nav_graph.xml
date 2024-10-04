@@ -1,0 +1,32 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ali.starzplay.ui.main.MainFragment"
+        android:label="Main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="mediaItem"
+                app:argType="com.ali.core.model.MediaItem" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ali.starzplay.ui.detail.DetailFragment"
+        android:label="Detail">
+        <action
+            android:id="@+id/action_detailFragment_to_playerFragment"
+            app:destination="@id/playerFragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.ali.starzplay.ui.player.PlayerFragment"
+        android:label="Player" />
+</navigation>
